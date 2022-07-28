@@ -16,7 +16,7 @@
         html {
             background-color: black;
             font-family: 'Mochiy Pop One', sans-serif;
-            
+
 
         }
 
@@ -59,11 +59,13 @@
         body {
             background-color: #000000;
             font-family: 'Mochiy Pop One', sans-serif;
+            height: 100vh;
+            width: auto;
 
         }
 
         .question {
-            margin-top: 5rem;
+            margin-top: 3rem;
         }
 
         .choice-container {
@@ -89,8 +91,8 @@
             display: flex;
             flex-wrap: wrap;
             width: 90%;
-           margin: 0 auto;
-           margin-bottom: 1rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
         }
 
         .container,
@@ -139,14 +141,15 @@
         .incorrect {
             background-color: red;
         }
-        .jokes{
+
+        .jokes {
             margin: 0 auto;
             width: 90%;
         }
-        header{
+
+        header {
             font-size: 3rem;
         }
-        
     </style>
 </head>
 
@@ -156,22 +159,22 @@
     </div>
     <div class="container text-center">
         <div class="row" id="game">
-            <div id="hud">
-                <div id="hud-item">
+            <div id="hud" class="row">
+                <div id="hud-item" class="col">
                     <p class="hud-prefix">
                         Question
                     </p>
-                    <h1 class="hud-main-text">
-                        1/3
+                    <h1 class="hud-main-text mb-5" id="questionCounter">
+
                     </h1>
                 </div>
-                <div id="hud">
+                <div id="hud" class="col">
                     <div id="hud-item">
                         <p class="hud-prefix">
                             Score
                         </p>
-                        <h1 class="hud-main-text">
-                            0
+                        <h1 class="hud-main-text mb-5" id="score">
+                            
                         </h1>
                     </div>
                 </div>
@@ -193,32 +196,33 @@
                 <p class="col-sm-1 choice-prefix border rounded ">D</p>
                 <p class="col choice-text" data-number="4">4.</p>
             </div>
-                <img class="row jokes" align="right" src="https://readme-jokes.vercel.app/api" alt="Jokes Card"/>
-            
+            <img class="row jokes" align="right" src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
+
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
         <script>
 
-            const question = document.getElementById('question');
-            const choices = Array.from(document.getElementsByClassName('choice-text'));
+            const question = document.getElementById("question");
+            const choices = Array.from(document.getElementsByClassName("choice-text"));
+            const questionCounterText = document.getElementById("questionCounter");
+            const scoreText = document.getElementById("score");
 
             let currentQuestion = {};
             let acceptingAnswers = false;
             let score = 0;
             let questionCounter = 0;
-            let availableQuestions = [];
-
+            let availableQuesions = [];
 
             let questions = [
                 {
-                    question: 'Inside which HTML element do we put the JavaScript??',
-                    choice1: '<script>',
-                    choice2: '<javascript>',
-                    choice3: '<js>',
-                    choice4: '<scripting>',
-                    answer: 1,
+                    question: "Inside which HTML element do we put the JavaScript??",
+                    choice1: "<script>",
+                    choice2: "<javascript>",
+                    choice3: "<js>",
+                    choice4: "<scripting>",
+                    answer: 1
                 },
                 {
                     question:
@@ -227,7 +231,7 @@
                     choice2: "<script name='xxx.js'>",
                     choice3: "<script src='xxx.js'>",
                     choice4: "<script file='xxx.js'>",
-                    answer: 3,
+                    answer: 3
                 },
                 {
                     question: " How do you write 'Hello World' in an alert box?",
@@ -235,36 +239,39 @@
                     choice2: "alertBox('Hello World');",
                     choice3: "msg('Hello World');",
                     choice4: "alert('Hello World');",
-                    answer: 4,
-                },
+                    answer: 4
+                }
             ];
 
-            const CorrectBonus = 10;
-            const maxQuestions = 3;
+            //CONSTANTS
+            const CORRECT_BONUS = 10;
+            const MAX_QUESTIONS = 3;
 
             startGame = () => {
                 questionCounter = 0;
                 score = 0;
-                availableQuestions = [...questions];
-                console.log(availableQuestions);
+                availableQuesions = [...questions];
                 getNewQuestion();
             };
 
             getNewQuestion = () => {
-
-                if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
-                    return window.location.assign('/end.html');
+                if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+                    //go to the end page
+                    return window.location.assign("/end.html");
                 }
                 questionCounter++;
-                const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-                currentQuestion = availableQuestions[questionIndex];
-                question.innerText = currentQuestion.question;
-                choices.forEach(choice => {
-                    const number = choice.dataset['number'];
-                    choice.innerText = currentQuestion['choice' + number]
-                })
+                questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
-                availableQuestions.splice(questionIndex, 1);
+                const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+                currentQuestion = availableQuesions[questionIndex];
+                question.innerText = currentQuestion.question;
+
+                choices.forEach(choice => {
+                    const number = choice.dataset["number"];
+                    choice.innerText = currentQuestion["choice" + number];
+                });
+
+                availableQuesions.splice(questionIndex, 1);
                 acceptingAnswers = true;
             };
 
@@ -275,9 +282,13 @@
                     acceptingAnswers = false;
                     const selectedChoice = e.target;
                     const selectedAnswer = selectedChoice.dataset["number"];
-                    selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
                     const classToApply =
                         selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+                    if (classToApply === "correct") {
+                        incrementScore(CORRECT_BONUS);
+                    }
 
                     selectedChoice.parentElement.classList.add(classToApply);
 
@@ -285,12 +296,15 @@
                         selectedChoice.parentElement.classList.remove(classToApply);
                         getNewQuestion();
                     }, 1000);
-
                 });
             });
 
-            startGame();
+            incrementScore = num => {
+                score += num;
+                scoreText.innerText = score;
+            };
 
+            startGame();
 
         </script>
 </body>
