@@ -16,6 +16,7 @@
         html {
             background-color: black;
             font-family: 'Mochiy Pop One', sans-serif;
+            
 
         }
 
@@ -82,6 +83,16 @@
             cursor: pointer;
         }
 
+        .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+           margin: 0 auto;
+           margin-bottom: 1rem;
+        }
+
         .container,
         .container-fluid,
         .container-lg,
@@ -128,11 +139,6 @@
         .incorrect {
             background-color: red;
         }
-        .joke{
-            margin: 0 auto;
-            width: 95%;
-            
-        }
     </style>
 </head>
 
@@ -160,130 +166,123 @@
                             0
                         </h1>
                     </div>
+                </div>
+                <p class="h2 container-text pb-4" id="question">What is the answer to this question?</p>
             </div>
-            <p class="h2 container-text pb-4" id="question">What is the answer to this question?</p>
+            <div class="row choice-container rounded text-start">
+                <p class="col-sm-1 border rounded choice-prefix">A</p>
+                <p class="col choice-text" data-number="1">1.</p>
+            </div>
+            <div class="choice-container row rounded text-start">
+                <p class="col-sm-1 border rounded choice-prefix">B</p>
+                <p class="col choice-text" data-number="2">2.</p>
+            </div>
+            <div class="choice-container row rounded text-start">
+                <p class="col-sm-1 choice-prefix border rounded ">C</p>
+                <p class="col choice-text" data-number="3">3.</p>
+            </div>
+            <div class="choice-container row rounded text-start">
+                <p class="col-sm-1 choice-prefix border rounded ">D</p>
+                <p class="col choice-text" data-number="4">4.</p>
+            </div>
         </div>
-        <div class="row choice-container rounded text-start">
-            <p class="col-sm-1 border rounded choice-prefix">A</p>
-            <p class="col choice-text" data-number="1">1.</p>
-        </div>
-        <div class="choice-container row rounded text-start">
-            <p class="col-sm-1 border rounded choice-prefix">B</p>
-            <p class="col choice-text" data-number="2">2.</p>
-        </div>
-        <div class="choice-container row rounded text-start">
-            <p class="col-sm-1 choice-prefix border rounded ">C</p>
-            <p class="col choice-text" data-number="3">3.</p>
-        </div>
-        <div class="choice-container row rounded text-start">
-            <p class="col-sm-1 choice-prefix border rounded ">D</p>
-            <p class="col choice-text" data-number="4">4.</p>
-        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+        <script>
 
-        <div class="container mb-2 align-contect center">
-        <img align="center" class="row joke" src="https://readme-jokes.vercel.app/api" alt="Jokes Card"/>
-       </div>
-    </div>
-    <footer class="mt-2">
+            const question = document.getElementById('question');
+            const choices = Array.from(document.getElementsByClassName('choice-text'));
 
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script>
-
-        const question = document.getElementById('question');
-        const choices = Array.from(document.getElementsByClassName('choice-text'));
-
-        let currentQuestion = {};
-        let acceptingAnswers = false;
-        let score = 0;
-        let questionCounter = 0;
-        let availableQuestions = [];
+            let currentQuestion = {};
+            let acceptingAnswers = false;
+            let score = 0;
+            let questionCounter = 0;
+            let availableQuestions = [];
 
 
-        let questions = [
-            {
-                question: 'Inside which HTML element do we put the JavaScript??',
-                choice1: '<script>',
-                choice2: '<javascript>',
-                choice3: '<js>',
-                choice4: '<scripting>',
-                answer: 1,
-            },
-            {
-                question:
-                    "What is the correct syntax for referring to an external script called 'xxx.js'?",
-                choice1: "<script href='xxx.js'>",
-                choice2: "<script name='xxx.js'>",
-                choice3: "<script src='xxx.js'>",
-                choice4: "<script file='xxx.js'>",
-                answer: 3,
-            },
-            {
-                question: " How do you write 'Hello World' in an alert box?",
-                choice1: "msgBox('Hello World');",
-                choice2: "alertBox('Hello World');",
-                choice3: "msg('Hello World');",
-                choice4: "alert('Hello World');",
-                answer: 4,
-            },
-        ];
+            let questions = [
+                {
+                    question: 'Inside which HTML element do we put the JavaScript??',
+                    choice1: '<script>',
+                    choice2: '<javascript>',
+                    choice3: '<js>',
+                    choice4: '<scripting>',
+                    answer: 1,
+                },
+                {
+                    question:
+                        "What is the correct syntax for referring to an external script called 'xxx.js'?",
+                    choice1: "<script href='xxx.js'>",
+                    choice2: "<script name='xxx.js'>",
+                    choice3: "<script src='xxx.js'>",
+                    choice4: "<script file='xxx.js'>",
+                    answer: 3,
+                },
+                {
+                    question: " How do you write 'Hello World' in an alert box?",
+                    choice1: "msgBox('Hello World');",
+                    choice2: "alertBox('Hello World');",
+                    choice3: "msg('Hello World');",
+                    choice4: "alert('Hello World');",
+                    answer: 4,
+                },
+            ];
 
-        const CorrectBonus = 10;
-        const maxQuestions = 3;
+            const CorrectBonus = 10;
+            const maxQuestions = 3;
 
-        startGame = () => {
-            questionCounter = 0;
-            score = 0;
-            availableQuestions = [...questions];
-            console.log(availableQuestions);
-            getNewQuestion();
-        };
+            startGame = () => {
+                questionCounter = 0;
+                score = 0;
+                availableQuestions = [...questions];
+                console.log(availableQuestions);
+                getNewQuestion();
+            };
 
-        getNewQuestion = () => {
+            getNewQuestion = () => {
 
-            if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
-                return window.location.assign('/end.html');
-            }
-            questionCounter++;
-            const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-            currentQuestion = availableQuestions[questionIndex];
-            question.innerText = currentQuestion.question;
+                if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
+                    return window.location.assign('/end.html');
+                }
+                questionCounter++;
+                const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+                currentQuestion = availableQuestions[questionIndex];
+                question.innerText = currentQuestion.question;
+                choices.forEach(choice => {
+                    const number = choice.dataset['number'];
+                    choice.innerText = currentQuestion['choice' + number]
+                })
+
+                availableQuestions.splice(questionIndex, 1);
+                acceptingAnswers = true;
+            };
+
             choices.forEach(choice => {
-                const number = choice.dataset['number'];
-                choice.innerText = currentQuestion['choice' + number]
-            })
+                choice.addEventListener("click", e => {
+                    if (!acceptingAnswers) return;
 
-            availableQuestions.splice(questionIndex, 1);
-            acceptingAnswers = true;
-        };
-
-        choices.forEach(choice => {
-            choice.addEventListener("click", e => {
-                if (!acceptingAnswers) return;
-
-                acceptingAnswers = false;
-                const selectedChoice = e.target;
-                const selectedAnswer = selectedChoice.dataset["number"];
-                selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-                const classToApply =
+                    acceptingAnswers = false;
+                    const selectedChoice = e.target;
+                    const selectedAnswer = selectedChoice.dataset["number"];
                     selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+                    const classToApply =
+                        selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
-                selectedChoice.parentElement.classList.add(classToApply);
+                    selectedChoice.parentElement.classList.add(classToApply);
 
-                setTimeout(() => {
-                    selectedChoice.parentElement.classList.remove(classToApply);
-                    getNewQuestion();
-                }, 1000);
+                    setTimeout(() => {
+                        selectedChoice.parentElement.classList.remove(classToApply);
+                        getNewQuestion();
+                    }, 1000);
 
+                });
             });
-        });
 
-        startGame();
+            startGame();
 
 
-    </script>
+        </script>
 </body>
 
 </html>
