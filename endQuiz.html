@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Congrats!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <style>
+        .container-final {
+            margin-top: 5rem;
+            height: 100vh;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #55da20;
+        }
+
+        #saveScoreBtn[disabled]:hover{
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            background: #000000;
+            color: #55da20;
+            background-image: -webkit-linear-gradient(top, #000000, #0B5724);
+            background-image: -moz-linear-gradient(top, #000000, #0B5724);
+            background-image: -ms-linear-gradient(top, #000000, #0B5724);
+            background-image: -o-linear-gradient(top, #000000, #0B5724);
+            background-image: -webkit-gradient(to bottom, #000000, #0B5724);
+        } 
+      
+
+        body {
+            background-color: black;
+            color: aliceblue;
+            font-family: 'Mochiy Pop One', sans-serif;
+            overflow: hidden;
+        }
+
+        html {
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+
+        .finalScore {
+            margin-top: 10rem;
+            font-size: 5rem;
+        }
+
+        .formInput {
+            margin: 1rem;
+        }
+
+        .playReset {
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .Green3D {
+            background: #000000;
+            background-image: -webkit-linear-gradient(top, #000000, #0B5724);
+            background-image: -moz-linear-gradient(top, #000000, #0B5724);
+            background-image: -ms-linear-gradient(top, #000000, #0B5724);
+            background-image: -o-linear-gradient(top, #000000, #0B5724);
+            background-image: -webkit-gradient(to bottom, #000000, #0B5724);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            height: 0;
+            line-height: 0;
+            color: #55DA20;
+            font-family: 'Mochiy Pop One', sans-serif;
+            width: 200px;
+            font-size: 21px;
+            font-weight: 100;
+            padding: 20px;
+            -webkit-box-shadow: 0 4px 0 2px #000000;
+            -moz-box-shadow: 0 4px 0 2px #000000;
+            box-shadow: 0 4px 0 2px #000000;
+            text-shadow: 1px 1px 5px #000000;
+            border: solid #000000 1px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .Green3D:hover {
+            border: solid #000000 1px;
+            color: white;
+            background: #163420;
+            background-image: -webkit-linear-gradient(top, #163420, #3DF670);
+            background-image: -moz-linear-gradient(top, #163420, #3DF670);
+            background-image: -ms-linear-gradient(top, #163420, #3DF670);
+            background-image: -o-linear-gradient(top, #163420, #3DF670);
+            background-image: -webkit-gradient(to bottom, #163420, #3DF670);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            border-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 0.5em 0.5em -0.4em #55da20;
+            transform: translateY(-0.2em);
+            cursor: pointer;
+        }
+        .userName{
+            width: 200px;
+            box-shadow: 0 0.5em 0.5em -0.4em #55da20;
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+    <div id="end" class="container-final text-center">
+        <div class="col">
+            <h1 class="finalScore" id="finalScore">0</h1>
+        </div>
+        <div>
+            <form class="formInput" action="">
+                <input type="text" class="userName text-center mb-4 border rounded" name="username" id="userName"
+                    placeholder="username"/>
+                <div>
+                    <a href="#"><button  type="submit" class="mb-3 Green3D" id="saveScoreBtn"
+                        onclick='saveHighScore(event)' disabled>Save</button></a>
+                </div>
+                <div class="col">
+                    <div>
+                        <a class="row Green3D mb-3" href="./index.html">Home</a>
+                    </div>
+                    <div>
+                        <a class="Green3D row mb-3" href="./game.html">Play Again</a>
+                    </div>
+                </div>
+        </div>
+        </form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+        <script>
+            const userName = document.getElementById('userName');
+            const saveScoreBtn = document.getElementById('saveScoreBtn');
+            userName.addEventListener('keyup', () => {
+                saveScoreBtn.disabled = !userName.value;
+            });
+
+            saveHighScore = e => {
+                console.log("Clicked the save button!");
+                e.preventDefault();
+
+            }
+        </script>
+</body>
+
+</html>
