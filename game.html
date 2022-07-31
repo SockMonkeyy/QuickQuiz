@@ -121,9 +121,12 @@
         .container-text {
             margin-right: 2rem;
             width: 90%;
-            word-wrap: break-word;
+            word-break: break-word;
         }
-
+        p.col.choice-text{
+            font-size: 1rem;
+            word-break: break-all;
+        }
         .choice-text {
             margin-top: 1rem;
             padding-top: 1.5rem;
@@ -133,8 +136,9 @@
             justify-content: center;
             align-items: center;
             font-size: 1rem;
+            word-wrap: 
         }
-
+     
         .correct {
             background-color: #55da20;
         }
@@ -234,37 +238,21 @@
             let questionCounter = 0;
             let availableQuesions = [];
 
-            let questions = [
-                {
-                    question: "Inside which HTML element do we put the JavaScript??",
-                    choice1: "<script>",
-                    choice2: "<javascript>",
-                    choice3: "<js>",
-                    choice4: "<scripting>",
-                    answer: 1
-                },
-                {
-                    question:
-                        "What is the correct syntax for referring to an external script called 'xxx.js'?",
-                    choice1: "<script href='xxx.js'>",
-                    choice2: "<script name='xxx.js'>",
-                    choice3: "<script src='xxx.js'>",
-                    choice4: "<script file='xxx.js'>",
-                    answer: 3
-                },
-                {
-                    question: " How do you write 'Hello World' in an alert box?",
-                    choice1: "msgBox('Hello World');",
-                    choice2: "alertBox('Hello World');",
-                    choice3: "msg('Hello World');",
-                    choice4: "alert('Hello World');",
-                    answer: 4
-                }
-            ];
+            let questions = [];
+
+            fetch('questions.json')
+                .then(res => {
+                    return res.json();
+                })
+                .then(loadedQuestions => {
+                    console.log(loadedQuestions);
+                    questions = loadedQuestions;
+                    startGame();
+                });
 
             //CONSTANTS
             const CORRECT_BONUS = 10;
-            const MAX_QUESTIONS = 3;
+            const MAX_QUESTIONS = 10;
 
             startGame = () => {
                 questionCounter = 0;
@@ -275,10 +263,12 @@
 
             getNewQuestion = () => {
                 if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+                    
                     localStorage.setItem('mostRecentScore', score);
                     //go to the end page
                     return window.location.assign("./endQuiz.html");
                 }
+                
                 questionCounter++;
                 questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
@@ -324,7 +314,7 @@
                 scoreText.innerText = score;
             };
 
-            startGame();
+            
 
         </script>
 </body>
