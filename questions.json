@@ -255,6 +255,7 @@
         "choice4": "`green`",
         "answer": 4
     },
+   
     {
         "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
         "choice1": "`{}`",
@@ -263,110 +264,7 @@
         "choice4": "`null` and `false`",
         "answer": 1
     },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
-    {
-        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
-        "choice1": "`{}`",
-        "choice2": "`ReferenceError: greetign is not defined`",
-        "choice3": "`undefined`",
-        "choice4": "`null` and `false`",
-        "answer": 1
-    },
+   
     {
         "question": "What happens when we do this? function bark() {\n  console.log('Woof!');\n}\n\nbark.animal = 'dog';",
         "choice1": "`ReferenceError`",
