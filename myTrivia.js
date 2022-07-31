@@ -1,44 +1,4 @@
-
-        {
-            "answerOptions": {
-                "D": "`Person {firstName: \"Lydia\", lastName: \"Hallie\"}` and `ReferenceError`",
-                "A": "`Person {firstName: \"Lydia\", lastName: \"Hallie\"}` and `undefined`",
-                "B": "`Person {firstName: \"Lydia\", lastName: \"Hallie\"}` and `Person {firstName: \"Sarah\", lastName: \"Smith\"}`",
-                "C": "`Person {firstName: \"Lydia\", lastName: \"Hallie\"}` and `{}`"
-            },
-            "_id": "5f385fd42b8c528127ee71fd",
-            "id": 12,
-            "question": " What's the output?",
-            "codeSnippet": "function Person(firstName, lastName) {\n  this.firstName = firstName;\n  this.lastName = lastName;\n}\n\nconst lydia = new Person('Lydia', 'Hallie');\nconst sarah = Person('Sarah', 'Smith');\n\nconsole.log(lydia);\nconsole.log(sarah);",
-            "correctAnswer": "A",
-            "answerExplanation": "For `sarah`, we didn't use the `new` keyword. When using `new`, `this` refers to the new empty object we create. However, if you don't add `new`, `this` refers to the **global object**!\n\nWe said that `this.firstName` equals `\"Sarah\"` and `this.lastName` equals `\"Smith\"`. What we actually did, is defining `global.firstName = 'Sarah'` and `global.lastName = 'Smith'`. `sarah` itself is left `undefined`, since we don't return a value from the `Person` function."
-        },
-        {
-            "answerOptions": {
-                "D": "Capturing > Target > Bubbling",
-                "A": "Target > Capturing > Bubbling",
-                "B": "Bubbling > Target > Capturing",
-                "C": "Target > Bubbling > Capturing"
-            },
-            "_id": "5f385fd42b8c528127ee71fe",
-            "id": 13,
-            "question": " What are the three phases of event propagation?",
-            "codeSnippet": null,
-            "correctAnswer": "D",
-            "answerExplanation": "During the **capturing** phase, the event goes through the ancestor elements down to the target element. It then reaches the **target** element, and **bubbling** begins.\n\n<img src=\"https://i.imgur.com/N18oRgd.png\" width=\"200\">"
-        },
-        {
-            "answerOptions": {
-                "A": "true",
-                "B": "false"
-            },
-            "_id": "5f385fd42b8c528127ee71ff",
-            "id": 14,
-            "question": " All object have prototypes.",
-            "codeSnippet": null,
-            "correctAnswer": "B",
-            "answerExplanation": "All objects have prototypes, except for the **base object**. The base object is the object created by the user, or an object that is created using the `new` keyword. The base object has access to some methods and properties, such as `.toString`. This is the reason why you can use built-in JavaScript methods! All of such methods are available on the prototype. Although JavaScript can't find it directly on your object, it goes down the prototype chain and finds it there, which makes it accessible for you."
-        },
+//remaining questions to be added
         {
             "answerOptions": {
                 "D": "`3`",
