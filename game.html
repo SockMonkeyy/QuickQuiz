@@ -19,6 +19,7 @@
 
 
         }
+        
 
         body>div.container.text-center>div.container-text>div:nth-child(1)>p.col-sm-1.border.rounded.choice-prefix {
             padding: 1.5rem 2.5rem;
@@ -176,7 +177,7 @@
 
 <body class="text-light question">
     <div class="container">
-        <header class="text-center mb-4">Quick Quiz</header>
+        <header class="text-center main-text mb-4">Quick Quiz</header>
     </div>
     <div class="loader " id="loader"></div>
     <div class="container text-center hidden">
@@ -267,12 +268,12 @@
             startGame = () => {
                 questionCounter = 0;
                 score = 0;
-                availableQuesions = [...questions];
+                availableQuestions = [...questions];
                 getNewQuestion();
             };
 
             getNewQuestion = () => {
-                if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+                if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
                     
                     localStorage.setItem('mostRecentScore', score);
                     //go to the end page
@@ -282,8 +283,8 @@
                 questionCounter++;
                 questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
-                const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-                currentQuestion = availableQuesions[questionIndex];
+                const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+                currentQuestion = availableQuestions[questionIndex];
                 question.innerText = currentQuestion.question;
 
                 choices.forEach(choice => {
