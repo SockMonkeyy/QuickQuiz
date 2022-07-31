@@ -24,7 +24,7 @@
         font-family: 'Mochiy Pop One', sans-serif;
     }
     .container-main {
-      margin-top: 12rem;
+      margin-top: 6rem;
       width: 100vw;
       height: 100vh;
       
@@ -103,6 +103,9 @@
             transform: translateY(-0.25em);
             cursor: pointer;
         }
+        h1{
+          font-size: 3rem;
+        }
 
         .container,
         .container-fluid,
@@ -137,6 +140,55 @@
             justify-content: start;
             align-items: center;
         }
+        .Green3D {
+            background: #000000;
+            background-image: -webkit-linear-gradient(top, #000000, #0B5724);
+            background-image: -moz-linear-gradient(top, #000000, #0B5724);
+            background-image: -ms-linear-gradient(top, #000000, #0B5724);
+            background-image: -o-linear-gradient(top, #000000, #0B5724);
+            background-image: -webkit-gradient(to bottom, #000000, #0B5724);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            height: 0;
+            line-height: 0;
+            color: #55DA20;
+            font-family: 'Mochiy Pop One', sans-serif;
+            width: 200px;
+            font-size: 21px;
+            font-weight: 100;
+            padding: 20px;
+            -webkit-box-shadow: 0 4px 0 2px #000000;
+            -moz-box-shadow: 0 4px 0 2px #000000;
+            box-shadow: 0 4px 0 2px #000000;
+            text-shadow: 1px 1px 5px #000000;
+            border: solid #000000 1px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .Green3D:hover {
+            border: solid #000000 1px;
+            color: white;
+            background: #163420;
+            background-image: -webkit-linear-gradient(top, #163420, #3DF670);
+            background-image: -moz-linear-gradient(top, #163420, #3DF670);
+            background-image: -ms-linear-gradient(top, #163420, #3DF670);
+            background-image: -o-linear-gradient(top, #163420, #3DF670);
+            background-image: -webkit-gradient(to bottom, #163420, #3DF670);
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            border-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 0.5em 0.5em -0.4em #55da20;
+            transform: translateY(-0.2em);
+            cursor: pointer;
+        }
+
   </style>
 </head>
 
@@ -145,12 +197,12 @@
     <h1 class="mb-4">Quick Quiz!</h1>
     <div class="row-sm">
       <div class="col w-100">
-        <a href="./game.html"><button id="game" class="button1 m-2" >Play</button></a>
+        <a href="./game.html"><button id="game" class="Green3D m-2" >Play</button></a>
       </div>
     </div>
     <div class="row">
       <div class="col w-100">
-        <a href="./highScores.html"><button id="hs" class="button1 m-2">High Scores</button></a>
+        <a href="./highScores.html"><button id="hs" class="Green3D m-2">High Scores</button></a>
       </div>
     </div>
   </div>
