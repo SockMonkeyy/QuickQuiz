@@ -8,8 +8,7 @@
         "answer": 1
     },
     {
-        "question":
-            "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
         "choice1": "<script href='xxx.js'>",
         "choice2": "<script name='xxx.js'>",
         "choice3": "<script src='xxx.js'>",
@@ -190,6 +189,214 @@
         "choice2": "To add interactivity to HTML pages",
         "choice3": "To perform server side scripting operations",
         "choice4": "To enable animation and api operations",
+        "answer": 2
+    },
+    {
+        "question": "What's the output? function sayHi() {\n  console.log(name);\n  console.log(age);\n  var name = 'Lydia';\n  let age = 21;\n}\n\nsayHi();",
+        "choice1": "`undefined` and `ReferenceError`",
+        "choice2": "`Lydia` and `undefined`",
+        "choice3": "`Lydia` and `ReferenceError`",
+        "choice4": "`ReferenceError` and `21`",
+        "answer": 1
+    },
+    {
+        "question": " What's the output? for (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 1);\n}\n\nfor (let i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 1);\n}",
+        "choice1": "`0 1 2` and `0 1 2`",
+        "choice2": "`0 1 2` and `3 3 3`",
+        "choice3": "`3 3 3` and `0 1 2`",
+        "choice4": "`0 1 3` and `0 1 3`",
+        "answer": 3
+    },
+    {
+        "question": " What's the output? const shape = {\n  radius: 10,\n  diameter() {\n    return this.radius * 2;\n  },\n  perimeter: () => 2 * Math.PI * this.radius,\n};\n\nconsole.log(shape.diameter());\nconsole.log(shape.perimeter());",
+        "choice1": "`NaN` and `63`",
+        "choice2": "`20` and `62.83185307179586`",
+        "choice3": "`20` and `NaN`",
+        "choice4": "`20` and `63`",
+        "answer": 2
+    },
+    {
+        "question": " What's the output? +true;\n!'Lydia';",
+        "choice1": "`1` and `false`",
+        "choice2": "`false` and `NaN`",
+        "choice3": "`false` and `false`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": " Which one is true? const bird = {\n  size: 'small',\n};\n\nconst mouse = {\n  name: 'Mickey',\n  small: true,\n};",
+        "choice1": "All of them are valid",
+        "choice2": "`mouse.bird.size` is not valid",
+        "choice3": "`mouse[bird.size]` is not valid",
+        "choice4": "`mouse[bird[\"size\"]]` is not valid",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let c = { greeting: 'Hey!' };\nlet d;\n\nd = c;\nc.greeting = 'Hello';\nconsole.log(d.greeting);",
+        "choice1": "`ReferenceError`",
+        "choice2": "`Hello`",
+        "choice3": "`Hey!`",
+        "choice4": "`undefined`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let a = 3;\nlet b = new Number(3);\nlet c = 3;\n\nconsole.log(a == b);\nconsole.log(a === b);\nconsole.log(b === c);",
+        "choice1": "`false` `true` `true`",
+        "choice2": "`true` `false` `true`",
+        "choice3": "`false` `false` `true`",
+        "choice4": "`true` `false` `false`",
+        "answer": 3
+    },
+    {
+        "question": "What's the output? class Chameleon {\n  static colorChange(newColor) {\n    this.newColor = newColor;\n    return this.newColor;\n  }\n\n  constructor({ newColor = 'green' } = {}) {\n    this.newColor = newColor;\n  }\n}\n\nconst freddie = new Chameleon({ newColor: 'purple' });\nconsole.log(freddie.colorChange('orange'));",
+        "choice1": "`TypeError`",
+        "choice2": "`orange`",
+        "choice3": "`purple`",
+        "choice4": "`green`",
+        "answer": 4
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? let greeting;\ngreetign = {}; // Typo!\nconsole.log(greetign);",
+        "choice1": "`{}`",
+        "choice2": "`ReferenceError: greetign is not defined`",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
+        "answer": 1
+    },
+    {
+        "question": "What happens when we do this? function bark() {\n  console.log('Woof!');\n}\n\nbark.animal = 'dog';",
+        "choice1": "`ReferenceError`",
+        "choice2": "Nothing, this is totally fine!",
+        "choice3": "`SyntaxError`. You cannot add properties to a function this way.",
+        "choice4": "`\"Woof\"` gets logged.",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? function Person(firstName, lastName) {\n  this.firstName = firstName;\n  this.lastName = lastName;\n}\n\nconst member = new Person('Lydia', 'Hallie');\nPerson.getFullName = function() {\n  return `${this.firstName} ${this.lastName}`;\n};\n\nconsole.log(member.getFullName());",
+        "choice1": "`undefined` `undefined`",
+        "choice2": "`TypeError`",
+        "choice3": "`SyntaxError`",
+        "choice4": "`Lydia Hallie`",
+        "answer": 1
+    },
+    {
+        "question": "What's the output? function Person(firstName, lastName) {\n  this.firstName = firstName;\n  this.lastName = lastName;\n}\n\nconst lydia = new Person('Lydia', 'Hallie');\nconst sarah = Person('Sarah', 'Smith');\n\nconsole.log(lydia);\nconsole.log(sarah);s",
+        "choice1": "Capturing > Target > Bubbling",
+        "choice2": "Target > Capturing > Bubbling",
+        "choice3": "Bubbling > Target > Capturing",
+        "choice4": "Target > Bubbling > Capturing",
+        "answer": 4
+    },
+    {
+        "question": "All object have prototypes. `null`",
+        "choice1": "true",
+        "choice2": "false",
+        "choice3": "`undefined`",
+        "choice4": "`null` and `false`",
         "answer": 2
     }
 ]
