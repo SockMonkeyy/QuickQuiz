@@ -21,7 +21,7 @@
             color: #55da20;
         }
 
-        #saveScoreBtn[disabled]:hover{
+        #saveScoreBtn[disabled]:hover {
             cursor: not-allowed;
             box-shadow: none;
             transform: none;
@@ -32,14 +32,16 @@
             background-image: -ms-linear-gradient(top, #000000, #0B5724);
             background-image: -o-linear-gradient(top, #000000, #0B5724);
             background-image: -webkit-gradient(to bottom, #000000, #0B5724);
-        } 
-      
+        }
+
 
         body {
             background-color: black;
             color: aliceblue;
             font-family: 'Mochiy Pop One', sans-serif;
             overflow: hidden;
+            height: 100vh;
+            width: auto;
         }
 
         html {
@@ -47,8 +49,9 @@
         }
 
         .finalScore {
-            margin-top: 10rem;
+            padding-top: 5rem;
             font-size: 5rem;
+            margin-bottom: 3rem;
         }
 
         .formInput {
@@ -108,12 +111,20 @@
             transform: translateY(-0.2em);
             cursor: pointer;
         }
-        .userName{
+
+        .userName {
             width: 200px;
-            box-shadow: 0 0.5em 0.5em -0.4em #55da20;
+            box-shadow: 0 0 15px #55da20;
+            border-color: #55DA20;
         }
-        
-       
+
+        .userName:focus {
+            outline: none;
+            width: 200px;
+            box-shadow: 0 0 15px #55da20;
+            border-color: #55DA20;
+        }
+
     </style>
 </head>
 
@@ -125,10 +136,10 @@
         <div>
             <form class="formInput" action="">
                 <input type="text" class="userName text-center mb-4 border rounded" name="username" id="userName"
-                    placeholder="username"/>
+                    placeholder="username" />
                 <div>
-                    <a href="#"><button  type="submit" class="mb-3 Green3D" id="saveScoreBtn"
-                        onclick='saveHighScore(event)' disabled>Save</button></a>
+                    <a href="#"><button type="submit" class="mb-3 Green3D" id="saveScoreBtn"
+                            onclick='saveHighScore(event)' disabled>Save</button></a>
                 </div>
                 <div class="col">
                     <div>
@@ -145,19 +156,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-        <script>
-            const userName = document.getElementById('userName');
-            const saveScoreBtn = document.getElementById('saveScoreBtn');
-            userName.addEventListener('keyup', () => {
-                saveScoreBtn.disabled = !userName.value;
-            });
+    <script>
+        const userName = document.getElementById('userName');
+        const saveScoreBtn = document.getElementById('saveScoreBtn');
+        const finalScore = document.getElementById('finalScore');
+        const mostRecentScore = localStorage.getItem('mostRecentScore');
 
-            saveHighScore = e => {
-                console.log("Clicked the save button!");
-                e.preventDefault();
+       const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-            }
-        </script>
+        finalScore.innerText = mostRecentScore;
+
+        userName.addEventListener('keyup', () => {
+            saveScoreBtn.disabled = !userName.value;
+        });
+
+        saveHighScore = e => {
+            e.preventDefault();
+        
+
+        const score = {
+            score: mostRecentScore,
+            name: userName.value
+        };
+
+        highScores.push(score);
+        console.log(highScores);
+    };
+
+    </script>
 </body>
 
 </html>
