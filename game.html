@@ -218,6 +218,7 @@
             <div class="choice-container row rounded text-start">
                 <p class="col-sm-1 border rounded choice-prefix">B</p>
                 <p class="col choice-text" data-number="2"></p>
+                <p id="answerExplanation"></p>
             </div>
             <div class="choice-container row rounded text-start">
                 <p class="col-sm-1 choice-prefix border rounded ">C</p>
@@ -239,6 +240,7 @@
             const choices = Array.from(document.getElementsByClassName("choice-text"));
             const questionCounterText = document.getElementById("questionCounter");
             const scoreText = document.getElementById("score");
+            const answerExplanation = document.getElementById('answerExplanation');
 
             let currentQuestion = {};
             let acceptingAnswers = false;
@@ -290,6 +292,7 @@
                 choices.forEach(choice => {
                     const number = choice.dataset["number"];
                     choice.innerText = currentQuestion["choice" + number];
+                   
                 });
 
                 availableQuestions.splice(questionIndex, 1);
@@ -310,6 +313,9 @@
 
                     if (classToApply === "correct") {
                         incrementScore(CORRECT_BONUS);
+                    }
+                    if (classToApply === 'incorrect'){
+                       
                     }
 
                     selectedChoice.parentElement.classList.add(classToApply);

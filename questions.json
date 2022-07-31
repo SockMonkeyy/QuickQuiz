@@ -296,5 +296,30 @@
         "choice3": "`undefined`",
         "choice4": "`null` and `false`",
         "answer": 2
+    },
+    {
+        "question": "What is the OutPut? function sum(a, b) {\n  return a + b;\n}\n\nsum(1, '2');",
+        "choice1": "`3`",
+        "choice2": "`NaN`",
+        "choice3": "`TypeError`",
+        "choice4": "`\"12\"`",
+        "answer": 3
+    },
+    {
+        "question": "What is the OutPut? let number = 0;\nconsole.log(number++);\nconsole.log(++number);\nconsole.log(number);",
+        "choice1": "`0` `1` `2`",
+        "choice2": "`1` `1` `2`",
+        "choice3": "`1` `2` `2`",
+        "choice4": "`0` `2` `2`",
+        "answer": 3
+    },
+    {
+        "question": "What is the OutPut? function getPersonInfo(one, two, three) {\n  console.log(one);\n  console.log(two);\n  console.log(three);\n}\n\nconst person = 'Lydia';\nconst age = 21;\n\ngetPersonInfo`${person} is ${age} years old`;",
+        "choice1": "`\"Lydia\"` `21` `[\"\", \" is \", \" years old\"]`",
+        "choice2": "`[\"\", \" is \", \" years old\"]` `\"Lydia\"` `21`",
+        "choice3": "`\"Lydia\"` `[\"\", \" is \", \" years old\"]` `21`",
+        "choice4": "`[\"Lydia\", \" is \", \" years old\"]` `21`",
+        "answer": 2,
+        "answerExplanation": "If you use tagged template literals, the value of the first argument is always an array of the string values. The remaining arguments get the values of the passed expressions!"
     }
 ]
