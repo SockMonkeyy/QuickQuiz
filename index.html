@@ -26,56 +26,9 @@
     .container-main {
       margin-top: 6rem;
       width: 100vw;
-      height: 100vh;
-      
+      height: 100vh; 
     }
 
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      background-color: transparent;
-      width: 100px;
-      height: 100px;
-      text-align: center;
-      font-family: Montserrat, sans-serif;
-    }
-
-    .button1 {
-      text-decoration: none;
-      color: #55da20;
-    }
-
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      width: 200px;
-      height: 3rem;
-      margin-bottom: 1rem;
-      background: none;
-      color: #55da20;
-      border: 2px solid;
-      padding: 0 2rem;
-      font-size: 1em;
-      transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-    }
-    .button1:hover{
-      color: white;
-    }
-    a.button:hover {
-      color: #ffffff;
-    }
-    
-    button:hover {
-      border-color: #55da20;
-      color: #ffffff;
-      box-shadow: 0 0.5em 0.5em -0.4em #55da20;
-      transform: translateY(-0.25em);
-      cursor: pointer;
-    }
 
     .row>* {
       flex-shrink: 0;
@@ -107,15 +60,6 @@
           font-size: 3rem;
         }
 
-        .container,
-        .container-fluid,
-        .container-lg,
-        .container-md,
-        .container-sm,
-        .container-xl,
-        .container-xxl {
-            
-        }
 
         .choice-prefix {
             padding: 1.5rem 2.5rem;
@@ -189,6 +133,7 @@
             cursor: pointer;
         }
 
+
   </style>
 </head>
 
@@ -197,12 +142,12 @@
     <h1 class="mb-4">Quick Quiz!</h1>
     <div class="row-sm">
       <div class="col w-100">
-        <a href="./game.html"><button id="game" class="Green3D m-2" >Play</button></a>
+        <a href="./game.html"><button id="game" class="Green3D m-3" >Play</button></a>
       </div>
     </div>
     <div class="row">
       <div class="col w-100">
-        <a href="./highScores.html"><button id="hs" class="Green3D m-2">High Scores</button></a>
+        <a href="./highScores.html"><button id="hs" class="Green3D m-3">High Scores</button></a>
       </div>
     </div>
   </div>
@@ -219,33 +164,7 @@
     let questionCounter = 0;
     let availableQustions = []
 
-    let questions = [
-{
-question: 'Inside which HTML element do we put the JavaScript??',
-choice1: '<script>',
-choice2: '<javascript>',
-choice3: '<js>',
-choice4: '<scripting>',
-answer: 1,
-},
-{
-question:
-"What is the correct syntax for referring to an external script called 'xxx.js'?",
-choice1: "<script href='xxx.js'>",
-choice2: "<script name='xxx.js'>",
-choice3: "<script src='xxx.js'>",
-choice4: "<script file='xxx.js'>",
-answer: 3,
-},
-{
-question: " How do you write 'Hello World' in an alert box?",
-choice1: "msgBox('Hello World');",
-choice2: "alertBox('Hello World');",
-choice3: "msg('Hello World');",
-choice4: "alert('Hello World');",
-answer: 4,
-},
-];
+    let questions = [];
     console.log(choices);
 
 
