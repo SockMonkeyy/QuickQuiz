@@ -245,9 +245,12 @@
                     return res.json();
                 })
                 .then(loadedQuestions => {
-                    console.log(loadedQuestions);
+                    console.log(loadedQuestions.results);
                     questions = loadedQuestions;
                     startGame();
+                })
+                .catch(err => {
+                    console.error(err);
                 });
 
             //CONSTANTS
