@@ -1,4 +1,4 @@
-[
+ [
     {
         "question": "Inside which HTML element do we put the JavaScript??",
         "choice1": "<script>",
@@ -281,14 +281,7 @@
         "choice4": "`Lydia Hallie`",
         "answer": 1
     },
-    {
-        "question": "What's the output? function Person(firstName, lastName) {\n  this.firstName = firstName;\n  this.lastName = lastName;\n}\n\nconst lydia = new Person('Lydia', 'Hallie');\nconst sarah = Person('Sarah', 'Smith');\n\nconsole.log(lydia);\nconsole.log(sarah);s",
-        "choice1": "Capturing > Target > Bubbling",
-        "choice2": "Target > Capturing > Bubbling",
-        "choice3": "Bubbling > Target > Capturing",
-        "choice4": "Target > Bubbling > Capturing",
-        "answer": 4
-    },
+
     {
         "question": "All object have prototypes. `null`",
         "choice1": "true",
@@ -321,5 +314,205 @@
         "choice4": "`[\"Lydia\", \" is \", \" years old\"]` `21`",
         "answer": 2,
         "answerExplanation": "If you use tagged template literals, the value of the first argument is always an array of the string values. The remaining arguments get the values of the passed expressions!"
+    },
+    {
+        "question": "Which class provides a responsive fixed width container?",
+        "choice1": "`.container`",
+        "choice2": "`.container-responsive`",
+        "choice3": "`.container-fluid`",
+        "choice4": "`.container-fixed`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which contextual class is used to create an orange text color?",
+        "choice1": "`.txt-warning`",
+        "choice2": "`.text-warning`",
+        "choice3": "`.bg-warning`",
+        "choice4": "`.txt-orange`",
+        "answer": 2,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class adds zebra-stripes to a table?",
+        "choice1": "`.table-striped`",
+        "choice2": "`.table-bordered`",
+        "choice3": "`.even and .odd`",
+        "choice4": "`.even and .odd`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class shapes an image to a circle?",
+        "choice1": "`.img-circle`",
+        "choice2": "`.img-rounded`",
+        "choice3": "`.img-round`",
+        "choice4": "`.rounded-circle",
+        "answer": 4,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a big box for calling extra attention?",
+        "choice1": "`.jumbotron`",
+        "choice2": "`container`",
+        "choice3": "`There is no such class`",
+        "choice4": "`.bigbox",
+        "answer": 3,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a button group?",
+        "choice1": "`.btn-group`",
+        "choice2": "`.button-group`",
+        "choice3": "`.group-btn`",
+        "choice4": "`.group-button",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which button class is used to create a large button?",
+        "choice1": "`.btn-lg`",
+        "choice2": "`.btn-l`",
+        "choice3": "`.btn-large`",
+        "choice4": "`.btn-l2",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a badge?",
+        "choice1": "`.badge`",
+        "choice2": "`.badge-item`",
+        "choice3": "`.badge-label`",
+        "choice4": "`.label-badge`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a loader?",
+        "choice1": "`.loader`",
+        "choice2": "`.spinner-loader`",
+        "choice3": "`.spinner-border`",
+        "choice4": "`.spinner`",
+        "answer": 3,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a basic pagination?",
+        "choice1": "`.pagination`",
+        "choice2": "`.pages`",
+        "choice3": "`.navigation`",
+        "choice4": "`.page`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a basic list group?",
+        "choice1": "`.list-group`",
+        "choice2": "`.grouped-list`",
+        "choice3": "`.group-list`",
+        "choice4": "`.list group`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class adds a heading to a card?",
+        "choice1": "`.card-header`",
+        "choice2": "`.card-heading`",
+        "choice3": "`.card-head`",
+        "choice4": "`.card-footer`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class indicates a dropdown menu?",
+        "choice1": "`.dropdown`",
+        "choice2": "`.dropdown-list`",
+        "choice3": "`.select`",
+        "choice4": "`dropdown-select`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to create a vertical navigation bar?",
+        "choice1": "`navbar navbar-vertical`",
+        "choice2": "`.navbar-vertical`",
+        "choice3": "`.navbar`",
+        "choice4": "`.navbar-inverse`",
+        "answer": 3,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which component is used to cycle through elements, like a slideshow?",
+        "choice1": "`Carousel`",
+        "choice2": "`Slideshow`",
+        "choice3": "`Orbit`",
+        "choice4": "`Scrollspy`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which contextual class indicates a succesful or positive action?",
+        "choice1": "`.bg-success`",
+        "choice2": "`.bg-primary`",
+        "choice3": "`.bg-warning`",
+        "choice4": "`.bg-info`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class indicates uppercased text?",
+        "choice1": "`.text-uppercase`",
+        "choice2": "`.text-capitalize`",
+        "choice3": "`.uppercase`",
+        "choice4": "`.upcased`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which attribute is used to create a tooltip?",
+        "choice1": "`data-bs-toggle=\"tooltips\"`",
+        "choice2": "`data-bs-toggle=\"collapse\"`",
+        "choice3": "`data-bs-toggle=\"popup\"`",
+        "choice4": "`data-bs-toggle=\"modal\"`",
+        "answer": 1,
+        "answerExplanation": ""
+    },
+    {
+        "question": "A standard navigation tab is created with:",
+        "choice1": "`<ul class=\"navigation-tabs\">`",
+        "choice2": "`<ul class=\"nav nav-navbar\">`",
+        "choice3": "`<ul class=\"nav nav-tabs\"> `",
+        "choice4": "`<ul class=\"nav tabs\">`",
+        "answer": 3,
+        "answerExplanation": ""
+    },
+    {
+        "question": "A standard navigation bar is created with:",
+        "choice1": "`<nav class=\"nav navbar\"> `",
+        "choice2": "`<nav class=\"navbar navbar-default\">`",
+        "choice3": "`<nav class=\"navigationbar navbar-default\">`",
+        "choice4": "`<nav class=\"navbar navbar-expand-sm\">`",
+        "answer": 4,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class is used to style a close icon?",
+        "choice1": "`.btn-x`",
+        "choice2": "`.btn-close",
+        "choice3": "`.close-icon`",
+        "choice4": "`.x`",
+        "answer": 2,
+        "answerExplanation": ""
+    },
+    {
+        "question": "Which class can be used to float an element to the right of the page?",
+        "choice1": ".float-end",
+        "choice2": "`.float-right`",
+        "choice3": "`.float-r`",
+        "choice4": "`.float-start",
+        "answer": 1,
+        "answerExplanation": ""
     }
+
+
 ]

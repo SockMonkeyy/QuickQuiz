@@ -294,11 +294,12 @@
                     choice.innerText = currentQuestion["choice" + number];
                    
                 });
-
+               
+                //removes current question from available questions
                 availableQuestions.splice(questionIndex, 1);
                 acceptingAnswers = true;
             };
-
+            
             choices.forEach(choice => {
                 choice.addEventListener("click", e => {
                     
@@ -326,7 +327,7 @@
                     }, 800);
                 });
             });
-
+            
             incrementScore = num => {
                 score += num;
                 scoreText.innerText = score;
